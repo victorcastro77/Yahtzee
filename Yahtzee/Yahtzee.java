@@ -6,6 +6,7 @@ public class Yahtzee
     private Die6 die4;
     private Die6 die5;
     private int n;
+    private String diceValues;
     public Yahtzee() {
         die1 = new Die6();
         die2 = new Die6();
@@ -40,18 +41,41 @@ public class Yahtzee
         }
     }
     public String toString() {
-        return "Dice values: " +die1.getValue()+ ", " +die2.getValue()+ ", " +die3.getValue()+ ", " +die4.getValue()+ ", " +die5.getValue();
+        diceValues = "Dice values: " +die1.getValue()+ ", " +die2.getValue()+ ", " +die3.getValue()+ ", " +die4.getValue()+ ", " +die5.getValue();
+        return diceValues;
     }
-    public String summarize(int c1, int c2, int c3, int c4, int c5, int str) {
-        c1 = 0;
-        c2 = 0;
-        c3 = 0;
-        c4 = 0;
-        c5 = 0;
-        str = toString;
-        for (int i = 0; i < toString.length(); i++) {
-            
+    
+    public String summarize() {
+        int c1 = 0;
+        int c2 = 0;
+        int c3 = 0;
+        int c4 = 0;
+        int c5 = 0;
+        int c6 = 0;
+        int[] values = 
+        String str = "";
+        
+        for (int i = 0; i < diceValues; i++) {
+            if (i == 1) {
+                c1++;
+            }
+            if (i == 2) {
+                c2++;
+            }
+            if (i == 3) {
+                c3++;
+            }
+            if (i == 4) {
+                c4++;
+            }
+            if (i == 5) {
+                c5++;
+            }
+            if (i == 6) {
+                c6++;
+            }
         }
+        return str = "1-"+c1+", 2-"+c2+", 3-"+c3+", 4-"+c4+", 5-"+c5;
     }
     
 }
