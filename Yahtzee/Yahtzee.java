@@ -44,18 +44,21 @@ public class Yahtzee
         diceValues = "Dice values: " +die1.getValue()+ ", " +die2.getValue()+ ", " +die3.getValue()+ ", " +die4.getValue()+ ", " +die5.getValue();
         return diceValues;
     }
-    
     public String summarize() {
+        int s1 = die1.getValue();
+        int s2 = die2.getValue();
+        int s3 = die3.getValue();
+        int s4 = die4.getValue();
+        int s5 = die5.getValue();
         int c1 = 0;
         int c2 = 0;
         int c3 = 0;
         int c4 = 0;
         int c5 = 0;
         int c6 = 0;
-        int[] values = 
+        int[] values = new int[] {s1,s2,s3,s4,s5};
         String str = "";
-        
-        for (int i = 0; i < diceValues; i++) {
+        for (int i = 0; i < values.length; i++) {
             if (i == 1) {
                 c1++;
             }
@@ -75,7 +78,7 @@ public class Yahtzee
                 c6++;
             }
         }
-        return str = "1-"+c1+", 2-"+c2+", 3-"+c3+", 4-"+c4+", 5-"+c5;
+        return str = "1-"+c1+", 2-"+c2+", 3-"+c3+", 4-"+c4+", 5-"+c5+", 6-"+c6;
     }
     
 }
