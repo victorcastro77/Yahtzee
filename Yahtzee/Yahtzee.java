@@ -5,6 +5,7 @@ public class Yahtzee
     private Die6 die3;
     private Die6 die4;
     private Die6 die5;
+    private Die6 die6;
     private int n;
     private String diceValues;
     public Yahtzee() {
@@ -13,6 +14,7 @@ public class Yahtzee
         die3 = new Die6();
         die4 = new Die6();
         die5 = new Die6();
+        die6 = new Die6();
     }
     
     
@@ -45,40 +47,15 @@ public class Yahtzee
         return diceValues;
     }
     public String summarize() {
-        int s1 = die1.getValue();
-        int s2 = die2.getValue();
-        int s3 = die3.getValue();
-        int s4 = die4.getValue();
-        int s5 = die5.getValue();
-        int c1 = 0;
-        int c2 = 0;
-        int c3 = 0;
-        int c4 = 0;
-        int c5 = 0;
-        int c6 = 0;
-        int[] values = new int[] {s1,s2,s3,s4,s5};
-        String str = "";
-        for (int i = 0; i < values.length; i++) {
-            if (i == 1) {
-                c1++;
-            }
-            if (i == 2) {
-                c2++;
-            }
-            if (i == 3) {
-                c3++;
-            }
-            if (i == 4) {
-                c4++;
-            }
-            if (i == 5) {
-                c5++;
-            }
-            if (i == 6) {
-                c6++;
-            }
-        }
-        return str = "1-"+c1+", 2-"+c2+", 3-"+c3+", 4-"+c4+", 5-"+c5+", 6-"+c6;
+        int[] count = {0,0,0,0,0,0};
+        count[die1.getValue()]++;
+        count[die2.getValue()]++;
+        count[die3.getValue()]++;
+        count[die4.getValue()]++;
+        count[die5.getValue()]++;
+        count[die6.getValue()]++;
+
+        return  ("1-"+count[1]+", 2-"+count[2]+", 3-"+count[3]+", 4-"+count[4]+", 5-"+count[5]+", 6-"+count[6]);
     }
     
 }
